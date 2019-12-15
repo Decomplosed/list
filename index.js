@@ -8,29 +8,16 @@ fs.readdir(process.cwd(), (err, filenames) => {
     console.log(err)
   }
 
-  const allStats = Array(filenames.length).fill(null)
+})
 
-  for (let filename of filenames) {
-    const index = filenames.indexOf(filename)
-
+const lstat = (filename) => {
+  return new Promise((resolve, reject) => {
     fs.lstat(filename, (err, stats) => {
       if (err) {
-        console.log(err)
+        reject(err)
       }
 
-      allStats[index] = stats
-
-      const ready = allStats.every((stats) => {
-
-        return stats
-      })
-
-      if (ready) {
-        allStats.forEach((stats, index) => {
-          console.log(filenames[index], stats.isFile())
-        })
-      }
+      resolve(stats)
     })
-  }
-
-})
+  })
+}
