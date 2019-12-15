@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/Decomplosed/list/issues"
   },
-  "homepage": "https://github.com/Decomplosed/list#readme"
+  "homepage": "https://github.com/Decomplosed/list#readme",
+  "dependencies": {
+    "chalk": "^3.0.0"
+  }
 }
