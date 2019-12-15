@@ -6,6 +6,9 @@ const util = require('util')
 // Method no2
 const lstat = util.promisify(fs.lstat)
 
+//Method no.3 
+const { lstat } = fs.promises
+
 fs.readdir(process.cwd(), (err, filenames) => {
 
   if (err) {
