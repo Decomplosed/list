@@ -2,6 +2,7 @@
 
 const fs = require('fs')
 const util = require('util')
+const chalk = require('chalk')
 
 // Method no2
 // const lstat = util.promisify(fs.lstat)
